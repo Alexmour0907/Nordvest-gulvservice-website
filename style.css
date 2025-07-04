@@ -1,0 +1,134 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  --primary-color: #295C8D;
+  --secondary-color: #4B4B4B;
+  --background-color: #F5F5F5;
+  --text-color: #333333;
+  --font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  
+  
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "poppins", sans-serif;
+  font-style: bold;
+}
+
+.logo img {
+  height: 50px;
+  scale: 3.5;
+  padding-left: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #4B4B4B;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* ...existing code... */
+
+.nav-links li a {
+    color: #4B4B4B; /* Dark gray */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #295C8D; /* Primary blue */
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* Remove any color change on hover, just keep the underline effect */
+.nav-links li a:hover {
+    color: #4B4B4B; /* Keep text color the same on hover */
+}
+
+/* Hero Section */
+.hero {
+    height: 88vh;
+    min-height: 500px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Images/Hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0;
+    padding: 0;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+.hero .btn {
+    background-color: #295C8D; /* Primary blue */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.hero .btn:hover {
+    background-color: #1f4a6b; /* Darker shade on hover */
+}
