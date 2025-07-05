@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<!DOC    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src 'self' www.google.com; img-src 'self' data: *; connect-src 'self';".YPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; frame-src 'self' www.google.com; img-src 'self' data: *; connect-src 'self';">
     <title>Nordvest Gulvservice</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -101,7 +102,7 @@
             <div class="team-cards">
                 <div class="profile-card">
                     <div class="profile-image">
-                        <img src="/Images/Placeholder.jpg" alt="Employee 1">
+                        <img src="/Images/thommas-brekke.jpg" alt="Tommas Brekke">
                     </div>
                     <div class="profile-info">
                         <h3>Tommas Brekke</h3>
@@ -110,7 +111,7 @@
                 </div>
                 <div class="profile-card">
                     <div class="profile-image">
-                        <img src="/Images/Placeholder.jpg" alt="Employee 2">
+                        <img src="/Images/martin-lovik.jpg" alt="Martin Løvik">
                     </div>
                     <div class="profile-info">
                         <h3>Martin Løvik</h3>
@@ -119,7 +120,7 @@
                 </div>
                 <div class="profile-card">
                     <div class="profile-image">
-                        <img src="/Images/Placeholder.jpg" alt="Employee 3">
+                        <img src="/Images/jonas-rooning.jpg" alt="Jonas Rønning">
                     </div>
                     <div class="profile-info">
                         <h3>Jonas Rønning</h3>
@@ -148,7 +149,7 @@
                 </ul>
                 <div class="service-price">Fra 399 kr/m² inkl. arbeid</div>
                 <div class="service-location">Perfekt for stue, kjøkken og soverom</div>
-                <button class="service-cta-button">Bestill gratis befaring</button>
+                <a href="#kontakt" class="service-cta-button">Bestill gratis befaring</a>
             </div>
 
             <!-- Gulvvedlikehold -->
@@ -162,7 +163,7 @@
                 </ul>
                 <div class="service-price">Vedlikehold fra 89 kr/m² – sliping fra 199 kr/m²</div>
                 <div class="service-time">Raskt utført – minimal forstyrrelse i hjemmet</div>
-                <button class="service-cta-button">Bestill gratis befaring</button>
+                <a href="#kontakt" class="service-cta-button">Bestill gratis befaring</a>
             </div>
 
             <!-- Betongsliping -->
@@ -176,7 +177,48 @@
                 </ul>
                 <div class="service-price">Fra 299 kr/m² – gratis befaring i Ålesund</div>
                 <div class="service-bonus">Kombineres ofte med impregnering for ekstra holdbarhet</div>
-                <button class="service-cta-button">Bestill gratis befaring</button>
+                <a href="#kontakt" class="service-cta-button">Bestill gratis befaring</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="kontakt" class="contact">
+    <div class="contact-content">
+        <h2>Kontakt oss</h2>
+        <p>Har du spørsmål eller ønsker en gratis befaring? Ta kontakt med oss i dag!</p>
+        <form action="#" method="post" class="contact-form">
+            <div class="form-group">
+                <label for="name">Navn:</label>
+                <input type="text" id="name" name="name" maxlength="100" autocomplete="name">
+            </div>
+            <div class="form-group">
+                <label for="email">E-post:</label>
+                <input type="email" id="email" name="email" maxlength="100" autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Melding:</label>
+                <textarea id="message" name="message" rows="4" maxlength="1000" placeholder="Skriv din melding her..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="privacy" name="privacy">
+                    Jeg godtar at mine opplysninger brukes til å besvare min henvendelse
+                </label>
+            </div>
+            <button type="submit" class="btn-submit">Send melding</button> 
+        </form>
+        <div class="contact-info">
+            <h3>Kontaktinformasjon</h3>
+            <p><strong>Telefon:</strong> <a href="tel:+4791234567">+47 91 23 45 67</a></p>
+            <p><strong>E-post:</strong> <a href="mailto:post@nordvestgulvservice.no">post@nordvestgulvservice.no</a></p>
+            <p><strong>Adresse:</strong> Giskegata 12, 6003 Ålesund</p>
+            <p><strong>Org.nr:</strong> 918 447 002</p>
+            <p><strong>Arbeidsområde:</strong> Ålesund og omegn</p>
+            
+            <div class="map-container">
+                <h4>Finn oss her:</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.0340351015184!2d6.144669277440965!3d62.47208625561823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4616da3914d03621%3A0x1d35fdbfd8387431!2sGiskegata%2012%2C%206004%20%C3%85lesund!5e0!3m2!1sno!2sno!4v1751741233282!5m2!1sno!2sno" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </div>
