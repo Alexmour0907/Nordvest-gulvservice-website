@@ -15,6 +15,7 @@ html {
   --background-color: #F5F5F5;
   --text-color: #333333;
   --font-family: 'Poppins', sans-serif;
+  --scroll-offset: 100px; /* Change this value to adjust scroll offset */
 }
 
 body {
@@ -323,6 +324,144 @@ body {
     border-radius: 2px;
 }
 
+/* Services Section */
+.services {
+    background-color: #F0F6FA;
+    padding: 5rem 2rem;
+    margin-top: 3rem;
+}
+
+.services-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.services-intro {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card.featured {
+    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(41, 92, 141, 0.05));
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Add extra margin to first card's features to align price sections */
+.service-card:first-child .service-features {
+    margin-bottom: 3.5rem;
+}
+
+.service-features li {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.service-price {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.service-location, .service-time, .service-bonus {
+    background: rgba(41, 92, 141, 0.1);
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.service-cta-button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(41, 92, 141, 0.3);
+}
+
+.service-cta-button:hover {
+    background: linear-gradient(135deg, #4a90e2, var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(41, 92, 141, 0.4);
+}
+
 /* Responsive Design for About Section */
 @media (max-width: 768px) {
     .intro-highlight {
@@ -458,5 +597,114 @@ body {
     
     .profile-info h3 {
         font-size: 1.2rem;
+    }
+}
+
+/* Scroll Offset for Sticky Navbar */
+/* Adjust the --scroll-offset value to control how much space appears above the section when scrolling */
+:root {
+  --scroll-offset: 90px; /* Change this value to adjust scroll offset */
+}
+
+/* Target all sections with IDs for proper scroll positioning */
+section[id] {
+  scroll-margin-top: var(--scroll-offset);
+}
+
+/* Alternative method using pseudo-elements if needed */
+section[id]::before {
+  content: '';
+  display: block;
+  height: var(--scroll-offset);
+  margin-top: calc(var(--scroll-offset) * -1);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Social Media Buttons */
+.social-media-buttons {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-btn.instagram {
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(135deg, #a44bc7, #ff3030, #ffc058);
+}
+
+.social-btn.facebook {
+    background: linear-gradient(135deg, #1877f2, #42a5f5);
+}
+
+.social-btn.facebook:hover {
+    background: linear-gradient(135deg, #2e89ff, #5bb3ff);
+}
+
+.social-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design for Social Buttons */
+@media (max-width: 768px) {
+    .social-media-buttons {
+        bottom: 1rem;
+        right: 1rem;
+        gap: 0.8rem;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .social-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media-buttons {
+        bottom: 1rem;
+        right: 1rem;
+        gap: 0.6rem;
+    }
+    
+    .social-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
