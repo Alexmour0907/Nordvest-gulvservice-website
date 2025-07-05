@@ -708,3 +708,125 @@ section[id]::before {
         height: 18px;
     }
 }
+
+/* About History Section */
+.about-services, .achievements-section, .why-choose-section {
+    margin-bottom: 4rem;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-services h2, .achievements-section h2, .why-choose-section h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.about-services h2::after, .achievements-section h2::after, .why-choose-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-color), #4a90e2);
+    border-radius: 2px;
+}
+
+.services-list, .achievements-list, .why-choose-us {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.services-list li, .achievements-list li, .why-choose-us li {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.services-list li::before, .achievements-list li::before, .why-choose-us li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.achievements-list li::before {
+    content: '★';
+    color: #ffc107;
+}
+
+.quote-section {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quote-section blockquote {
+    margin: 0;
+    font-style: italic;
+}
+
+.quote-section blockquote p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-section cite {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-style: normal;
+    text-align: right;
+}
+
+/* Responsive Design for New Sections */
+@media (max-width: 768px) {
+    .about-services, .achievements-section, .why-choose-section {
+        text-align: center;
+        padding: 0 1rem;
+    }
+    
+    .about-services h2, .achievements-section h2, .why-choose-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .quote-section {
+        padding: 1.5rem;
+    }
+    
+    .quote-section blockquote p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-services h2, .achievements-section h2, .why-choose-section h2 {
+        font-size: 1.6rem;
+    }
+    
+    .quote-section {
+        padding: 1rem;
+    }
+}
