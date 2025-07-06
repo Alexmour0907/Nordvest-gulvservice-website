@@ -140,3 +140,42 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
     startAutoSlide();
 });
+
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
+    });
+});
+
+// Make hero CTA button functional
+document.addEventListener('DOMContentLoaded', function() {
+    const heroBtn = document.querySelector('.btn-donate');
+    if (heroBtn) {
+        heroBtn.addEventListener('click', function() {
+            document.getElementById('kontakt').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    }
+});
