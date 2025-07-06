@@ -145,25 +145,44 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
+    const navClose = document.getElementById('nav-close');
+    const body = document.body;
+    
+    function closeMenu() {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        body.classList.remove('mobile-nav-open');
+    }
+    
+    function openMenu() {
+        hamburger.classList.add('active');
+        navLinks.classList.add('active');
+        body.classList.add('mobile-nav-open');
+    }
     
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        body.classList.toggle('mobile-nav-open');
+    });
+    
+    // Close button functionality
+    navClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
     });
     
     // Close menu when clicking on a link
     navLinks.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            closeMenu();
         }
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            closeMenu();
         }
     });
 });
