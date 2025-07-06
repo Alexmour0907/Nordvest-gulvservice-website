@@ -94,7 +94,7 @@ body {
 .hero {
     height: 91vh;
     min-height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/Images/Hero-img.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./Images/Hero-img.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
