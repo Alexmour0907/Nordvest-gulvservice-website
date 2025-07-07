@@ -40,13 +40,17 @@ body {
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   font-family: "poppins", sans-serif;
   font-style: bold;
   color: #4B4B4B;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .logo img {
@@ -112,8 +116,9 @@ body {
     justify-content: center;
     text-align: center;
     color: #ffffff;
-    margin-top: 0;
+    margin-top: 80px;
     padding: 0;
+    position: relative;
 }
 
 .hero-content {
@@ -716,7 +721,8 @@ section[id]::before {
     right: 2rem;
     display: flex;
     gap: 1rem;
-    z-index: 10;
+    z-index: 100;
+    flex-direction: row;
 }
 
 .social-btn {
